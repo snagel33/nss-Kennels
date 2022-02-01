@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Kennel} from './components/Kennel';
+import { Kennel} from './components/Kennel.js';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Kennel />
+    <Router>
+        <Kennel />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
