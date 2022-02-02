@@ -5,6 +5,10 @@ import { AnimalCard } from './components/animal/AnimalCard.js'
 import { LocationCard } from "./components/location/LocationCard"
 import { CustomerCard } from "./components/customer/CustomerCard"
 import { EmployeeCard } from "./components/employee/EmployeeCard"
+import { AnimalList } from "./components/animal/AnimalList"
+import { LocationList } from "./components/location/LocationList"
+import { CustomerList } from "./components/customer/CustomerList"
+import { EmployeeList } from "./components/employee/EmployeeList"
 
 export const ApplicationViews = () => {
     return (
@@ -13,13 +17,13 @@ export const ApplicationViews = () => {
                 {}
                 <Route path="/" element={<Home />} />
                 {}
-                <Route path="/animals" element={<AnimalCard />} />
+                <Route path="/animals" element={<AnimalList />} />
                 {}
-                <Route path="/locations" element={<LocationCard />} />
+                <Route path="/locations" element={<LocationList />} />
                 {}
-                <Route path="/customers" element={<CustomerCard />} />
+                <Route path="/customers" element={<CustomerList />} />
                 {}
-                <Route path="/employees" element={<EmployeeCard />} />
+                <Route path="/employees" element={<EmployeeList />} />
             </Routes>
         </>
     )
