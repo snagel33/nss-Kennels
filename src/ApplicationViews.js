@@ -23,7 +23,7 @@ export const ApplicationViews = () => {
                 <Route path="/animals/:animalId" element={<AnimalDetail />} />
                 {}
                 <Route exact path="/locations" element={<LocationList />} />
-                <Route path="/locations/:locationId" element={<LocationCard />} />
+                <Route path="/locations/:locationId" element={<LocationDetail />} />
                 {}
                 <Route path="/customers" element={<CustomerList />} />
                 {}
