@@ -9,6 +9,8 @@ import { AnimalList } from "./components/animal/AnimalList"
 import { LocationList } from "./components/location/LocationList"
 import { CustomerList } from "./components/customer/CustomerList"
 import { EmployeeList } from "./components/employee/EmployeeList"
+import { AnimalDetail } from "./components/animal/AnimalDetail"
+import { LocationDetail } from "./components/location/LocationDetail"
 
 export const ApplicationViews = () => {
     return (
@@ -17,9 +19,11 @@ export const ApplicationViews = () => {
                 {}
                 <Route path="/" element={<Home />} />
                 {}
-                <Route path="/animals" element={<AnimalList />} />
+                <Route exact path="/animals" element={<AnimalList />} />
+                <Route path="/animals/:animalId" element={<AnimalDetail />} />
                 {}
-                <Route path="/locations" element={<LocationList />} />
+                <Route exact path="/locations" element={<LocationList />} />
+                <Route path="/locations/:locationId" element={<LocationCard />} />
                 {}
                 <Route path="/customers" element={<CustomerList />} />
                 {}

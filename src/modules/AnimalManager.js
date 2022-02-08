@@ -1,7 +1,7 @@
 const remoteURL = "http://localhost:8088"
 
 export const getAnimalById = (animalId) => {
-    return fetch(`${remoteURL}/animals/${animalId}?_expand=location&_expand=customerId`)
+    return fetch(`${remoteURL}/animals/${animalId}?_expand=location&_expand=customer`)
         .then(res => res.json())
 }
 
@@ -16,8 +16,3 @@ export const deleteAnimal = (id) => {
     }).then(result => result.json())
 }
 
-export const deleteEmployee = (id) => {
-    return fetch(`${remoteURL}/employees/${id}`, {
-        method: "DELETE"
-    }).then(result => result.json())
-}
