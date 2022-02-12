@@ -1,6 +1,7 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { CustomerCard } from "./CustomerCard";
 import { deleteCustomer, getAllCustomers } from "../../modules/CustomerManager";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -16,12 +17,23 @@ export const CustomerList = () => {
         getCustomers();
     }, []);
 
-    const handleDeleteCustomer = id => {
+    const handleDeleteCustomer = (id) => {
         deleteCustomer(id)
         .then(() => getAllCustomers().then(setCustomers));
     };
 
+    const navigate = useNavigate();
+
     return (
+        <>
+        <section className="section-content">
+            <button type="button"
+                className="btn"
+                onClick={() => {navigate("/customers/create")}}>
+                    Add Customer
+            </button>
+            </section>
+
         <div className="container-cards">
             {customers.map(customer => 
                 <CustomerCard 
@@ -29,5 +41,6 @@ export const CustomerList = () => {
                     customer={customer} 
                     handleDeleteCustomer={handleDeleteCustomer} />)}
         </div>
+        </>
     );
 };

@@ -7,6 +7,8 @@ import { CustomerList } from "./components/customer/CustomerList"
 import { EmployeeList } from "./components/employee/EmployeeList"
 import { AnimalDetail } from "./components/animal/AnimalDetail"
 import { LocationDetail } from "./components/location/LocationDetail"
+import { AnimalForm } from "./components/animal/AnimalForm"
+import { CustomerForm } from "./components/customer/CustomerForm"
 
 export const ApplicationViews = () => {
     return (
@@ -17,11 +19,13 @@ export const ApplicationViews = () => {
                 {}
                 <Route exact path="/animals" element={<AnimalList />} />
                 <Route path="/animals/:animalId" element={<AnimalDetail />} />
+                <Route path="/animals/create" element={<AnimalForm />} />
                 {}
                 <Route exact path="/locations" element={<LocationList />} />
                 <Route path="/locations/:locationId" element={<LocationDetail />} />
                 {}
                 <Route path="/customers" element={<CustomerList />} />
+                <Route path="/customers/create" element={<CustomerForm />} />
                 {}
                 <Route path="/employees" element={<EmployeeList />} />
             </Routes>
