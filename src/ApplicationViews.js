@@ -15,6 +15,7 @@ import { Login } from "./components/auth/Login"
 import { Register } from "./components/auth/Register"
 import { AnimalEditForm } from "./components/animal/AnimalEditForm"
 import { EmployeeEditForm } from "./components/employee/EmployeeEditForm"
+import { LocationEditForm } from "./components/location/LocationEditForm"
 
 export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
 
@@ -36,13 +37,14 @@ export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
                 <Route path="/" element={<Home />} />
                 {}
                 <Route exact path="/animals" element={<PrivateRoute><AnimalList /></PrivateRoute>} />
-                <Route path="/animals/:animalId" element={<AnimalDetail />} />
+                <Route exact path="/animals/:animalId" element={<PrivateRoute><AnimalDetail /></PrivateRoute>} />
                 <Route path="/animals/create" element={<AnimalForm />} />
                 <Route path="/animals/:animalId/edit" element={<PrivateRoute><AnimalEditForm /></PrivateRoute>} />
                 {}
                 <Route exact path="/locations" element={<PrivateRoute><LocationList /></PrivateRoute>} />
-                <Route path="/locations/:locationId" element={<LocationDetail />} />
+                <Route exact path="/locations/:locationId" element={<PrivateRoute><LocationDetail /></PrivateRoute>} />
                 <Route path="/locations/create" element={<LocationForm />} />
+                <Route path="/locations/:locationId/edit" element={<PrivateRoute><LocationEditForm /></PrivateRoute>} />
                 {}
                 <Route path="/customers" element={<PrivateRoute><CustomerList /></PrivateRoute>} />
                 <Route path="/customers/create" element={<CustomerForm />} />
