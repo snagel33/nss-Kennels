@@ -26,7 +26,14 @@ export const EmployeeList = () => {
     const navigate = useNavigate();
 
     return (
-
+        <>
+        <section className="section-content">
+        <button type="button"
+            className="btn"
+            onClick={() => {navigate("/employees/create")}}>
+            Add Employee
+        </button>
+        </section>
 
         <div className="container-cards">
             {employees.map(employee => 
@@ -35,6 +42,6 @@ export const EmployeeList = () => {
                     employee={employee} 
                     handleDeleteEmployee={handleDeleteEmployee} />)}
         </div>
-        
+        </>
     );
 };

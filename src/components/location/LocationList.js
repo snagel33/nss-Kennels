@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { LocationCard } from "./LocationCard";
 import { deleteLocation, getAllLocations } from "../../modules/LocationManager";
-
+import { useNavigate } from "react-router-dom";
 
 export const LocationList = () => {
     const [locations, setLocations] = useState([]);
@@ -20,7 +20,18 @@ export const LocationList = () => {
         .then(() => getAllLocations().then(setLocations));
     };
 
+    const navigate = useNavigate();
+
     return (
+        <>
+        <section className="section-content">
+        <button type="button"
+            className="btn"
+            onClick={() => {navigate("/locations/create")}}>
+            Add Location
+        </button>
+        </section>
+
         <div className="container-cards">
             {locations.map(location => 
                 <LocationCard 
@@ -28,5 +39,6 @@ export const LocationList = () => {
                     location={location} 
                     handleDeleteLocation={handleDeleteLocation} />)}
         </div>
+        </>
     );
 };
