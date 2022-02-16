@@ -69,7 +69,7 @@ export const EmployeeEditForm = () => {
             />
             <label htmlFor="name">Employee name</label>
 
-            <select value={employee.locationId} name="locationId" id="locationId" onChange={handleControlledInputChange} className="form-control" >
+          <select value={employee.locationId} name="locationId" id="locationId" onChange={handleControlledInputChange} className="form-control" >
               <option value="0">Select a location</option>
               {locations.map(l => (
                   <option key={l.id} value={l.id}>
