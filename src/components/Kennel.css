@@ -3,8 +3,13 @@
 
 /*Typography
 --------------------------------------------------------------*/
-body,
-button,
+body{
+  margin-left: 10%;
+}
+button{
+  background-color: cornflowerblue;
+  color: white;
+}
 input,
 select,
 textarea {

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { LocationCard } from "./LocationCard";
 import { deleteLocation, getAllLocations } from "../../modules/LocationManager";
 import { useNavigate } from "react-router-dom";
+import "./LocationForm";
 
 export const LocationList = () => {
     const [locations, setLocations] = useState([]);

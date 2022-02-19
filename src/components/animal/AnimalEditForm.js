@@ -48,11 +48,11 @@ export const AnimalEditForm = () => {
 
   useEffect(() => {
     getAllCustomers().then(setCustomers)
-  })
+  }, []);
 
   useEffect(() => {
     getAllLocations().then(setLocations)
-  })
+  }, []);
 
   const handleControlledInputChange = (event) => {
     const newAnimal = { ...animal };
@@ -110,7 +110,6 @@ export const AnimalEditForm = () => {
               ))}
           </select>
             <label htmlFor="customerId">Location</label>
-
           </div>
           <div className="alignRight">
             <button

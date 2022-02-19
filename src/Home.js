@@ -15,6 +15,7 @@ export const Home = () => {
 
   return (
     <>
+      <img src={'/images/kennel2.png'} alt="HomeKennel" />
       <address>
         Visit Us at the Nashville North Location
         <br />

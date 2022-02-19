@@ -74,7 +74,7 @@ export const CustomerEditForm = () => {
               id="email"
               value={customer.email}
             />
-            <label htmlFor="address">Address</label>
+            <label htmlFor="address">Email address</label>
           </div>
           <div className="alignRight">
             <button
